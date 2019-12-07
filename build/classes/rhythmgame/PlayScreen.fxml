@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="playScreenBorderPane" focusTraversable="true" onKeyPressed="#handleKeyPressed" onKeyReleased="#handleOnKeyReleased" onMouseEntered="#handleOnMouseEntered" prefHeight="572.0" prefWidth="1011.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rhythmgame.PlayScreenController">
+   <center>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="1023.0">
+         <children>
+            <StackPane fx:id="gameStackPane" layoutX="1.0" layoutY="-2.0" prefHeight="574.0" prefWidth="1010.0">
+               <children>
+                  <ImageView fitHeight="572.0" fitWidth="1114.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/urlie.jpg" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="574.0" fitWidth="337.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/Board.png" />
+                     </image>
+                     <effect>
+                        <Lighting diffuseConstant="2.0" specularConstant="0.77" specularExponent="40.0" surfaceScale="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </effect>
+                  </ImageView>
+                  <AnchorPane fx:id="gameAnchorPane" prefHeight="574.0" prefWidth="997.0">
+                     <children>
+                        <ImageView fx:id="red" fitHeight="543.0" fitWidth="82.0" layoutX="586.0" layoutY="2.0" opacity="0.43" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../images/red.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="blue" fitHeight="562.0" fitWidth="75.0" layoutX="510.0" layoutY="2.0" opacity="0.43" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../images/blue.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="yellow" fitHeight="562.0" fitWidth="75.0" layoutX="433.0" layoutY="1.0" opacity="0.43" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../images/yellow.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="orange" fitHeight="562.0" fitWidth="75.0" layoutX="356.0" opacity="0.43" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../images/orange.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fx:id="Status" fitHeight="128.0" fitWidth="226.0" layoutX="395.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                           <image>
+                              <Image url="@../images/missed.png" />
+                           </image>
+                        </ImageView>
+                        <HBox fx:id="rectangles_Box" layoutX="355.0" layoutY="529.0" prefHeight="25.0" prefWidth="306.0">
+                           <children>
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff7700" height="23.0" stroke="#545454" strokeType="INSIDE" width="77.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f1ff1f" height="23.0" stroke="#545454" strokeType="INSIDE" width="76.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1ffdff" height="23.0" stroke="#545454" strokeType="INSIDE" width="77.0" />
+                              <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ff1f1f" height="23.0" stroke="#545454" strokeType="INSIDE" width="73.0" />
+                           </children>
+                        </HBox>
+                        <ImageView fitHeight="73.0" fitWidth="316.0" layoutX="699.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/score.png" />
+                           </image>
+                        </ImageView>
+                        <Text fx:id="scoreLabel" fill="WHITE" layoutX="807.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0000000000000">
+                           <font>
+                              <Font name="Pragma Sans" size="22.0" />
+                           </font>
+                        </Text>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </StackPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
